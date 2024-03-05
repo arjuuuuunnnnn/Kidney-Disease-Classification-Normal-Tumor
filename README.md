@@ -1,2 +1,2 @@
 # Kidney-Disease-Classification-Normal-Tumor
-A Deep Learning Project 
+An Ongoing Deep Learning Project 
