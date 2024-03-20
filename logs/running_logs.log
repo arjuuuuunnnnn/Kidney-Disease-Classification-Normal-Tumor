@@ -356,3 +356,113 @@ Traceback (most recent call last):
     if (isinstance(value, str) or isinstance(value, collections.Callable) or hasattr(value, 'match')
                                                     ^^^^^^^^^^^^^^^^^^^^
 AttributeError: module 'collections' has no attribute 'Callable'
+[2024-03-20 19:31:44,057: INFO: main: STAGE >>>> Data Ingestion Stage started]
+[2024-03-20 19:31:44,060: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2024-03-20 19:31:44,062: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-03-20 19:31:44,063: INFO: common: created directory at: artifacts]
+[2024-03-20 19:31:44,063: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-03-20 19:31:44,063: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1wTvlJjWavZS7kV9dlWGqYUw1-wLbZvyQ/view?usp=sharing into the file artifacts/data_ingestion/data.zip]
+[2024-03-20 19:31:49,752: ERROR: data_ingestion: Error occurred during file download: module 'collections' has no attribute 'Callable']
+Traceback (most recent call last):
+  File "/home/hemanth/only_ml/Kidney-Disease-Classification-Normal-Tumor/src/cnnClassifier/components/data_ingestion.py", line 21, in download_file
+    gdown.download(prefix+file_id, zip_download_file)
+  File "/home/hemanth/.local/lib/python3.11/site-packages/gdown/download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/gdown/download.py", line 32, in get_url_from_gdrive_confirmation
+    soup = bs4.BeautifulSoup(line, features="html.parser")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/__init__.py", line 228, in __init__
+    self._feed()
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/__init__.py", line 289, in _feed
+    self.builder.feed(self.markup)
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/builder/_htmlparser.py", line 167, in feed
+    parser.feed(markup)
+  File "/usr/lib/python3.11/html/parser.py", line 110, in feed
+    self.goahead(0)
+  File "/usr/lib/python3.11/html/parser.py", line 178, in goahead
+    k = self.parse_html_declaration(i)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/html/parser.py", line 269, in parse_html_declaration
+    self.handle_decl(rawdata[i+2:gtpos])
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/builder/_htmlparser.py", line 112, in handle_decl
+    self.soup.endData(Doctype)
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/__init__.py", line 365, in endData
+    self.object_was_parsed(o)
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/__init__.py", line 370, in object_was_parsed
+    previous_element = most_recent_element or self._most_recent_element
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1040, in __getattr__
+    return self.find(tag)
+           ^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1278, in find
+    l = self.find_all(name, attrs, recursive, text, 1, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1299, in find_all
+    return self._find_all(name, attrs, text, limit, generator, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 528, in _find_all
+    strainer = SoupStrainer(name, attrs, text, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1596, in __init__
+    self.text = self._normalize_search_value(text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1601, in _normalize_search_value
+    if (isinstance(value, str) or isinstance(value, collections.Callable) or hasattr(value, 'match')
+                                                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'collections' has no attribute 'Callable'
+[2024-03-20 19:31:49,755: ERROR: main: module 'collections' has no attribute 'Callable']
+Traceback (most recent call last):
+  File "/home/hemanth/only_ml/Kidney-Disease-Classification-Normal-Tumor/main.py", line 11, in <module>
+    data_ingestion.main()
+  File "/home/hemanth/only_ml/Kidney-Disease-Classification-Normal-Tumor/src/cnnClassifier/pipeline/stage_01_data_ingestion.py", line 15, in main
+    data_ingestion.download_file()
+  File "/home/hemanth/only_ml/Kidney-Disease-Classification-Normal-Tumor/src/cnnClassifier/components/data_ingestion.py", line 28, in download_file
+    raise e
+  File "/home/hemanth/only_ml/Kidney-Disease-Classification-Normal-Tumor/src/cnnClassifier/components/data_ingestion.py", line 21, in download_file
+    gdown.download(prefix+file_id, zip_download_file)
+  File "/home/hemanth/.local/lib/python3.11/site-packages/gdown/download.py", line 253, in download
+    url = get_url_from_gdrive_confirmation(res.text)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/gdown/download.py", line 32, in get_url_from_gdrive_confirmation
+    soup = bs4.BeautifulSoup(line, features="html.parser")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/__init__.py", line 228, in __init__
+    self._feed()
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/__init__.py", line 289, in _feed
+    self.builder.feed(self.markup)
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/builder/_htmlparser.py", line 167, in feed
+    parser.feed(markup)
+  File "/usr/lib/python3.11/html/parser.py", line 110, in feed
+    self.goahead(0)
+  File "/usr/lib/python3.11/html/parser.py", line 178, in goahead
+    k = self.parse_html_declaration(i)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/html/parser.py", line 269, in parse_html_declaration
+    self.handle_decl(rawdata[i+2:gtpos])
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/builder/_htmlparser.py", line 112, in handle_decl
+    self.soup.endData(Doctype)
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/__init__.py", line 365, in endData
+    self.object_was_parsed(o)
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/__init__.py", line 370, in object_was_parsed
+    previous_element = most_recent_element or self._most_recent_element
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1040, in __getattr__
+    return self.find(tag)
+           ^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1278, in find
+    l = self.find_all(name, attrs, recursive, text, 1, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1299, in find_all
+    return self._find_all(name, attrs, text, limit, generator, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 528, in _find_all
+    strainer = SoupStrainer(name, attrs, text, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1596, in __init__
+    self.text = self._normalize_search_value(text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hemanth/.local/lib/python3.11/site-packages/bs4/element.py", line 1601, in _normalize_search_value
+    if (isinstance(value, str) or isinstance(value, collections.Callable) or hasattr(value, 'match')
+                                                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'collections' has no attribute 'Callable'
